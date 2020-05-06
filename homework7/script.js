@@ -48,7 +48,7 @@ const meUser = {
 const anotherUser = {
     id: 1,
     firstName: "Ihor",
-    lastName: "Svitlyi",
+    lastName: "Svitlyi"
     
     
 

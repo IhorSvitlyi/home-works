@@ -7,19 +7,28 @@ const origin = {
 }
 
 const target = {}
+for (const key in origin) {
+    const value = origin[key]
+    console.log(key + ":" + value)
+}
+
 
 function copy(target, origin) {
-    const change = Object.assign(target, origin);
-    console.log(change)
-    for (const key in target) {
-        const value = target[key];
-        console.log("key" + ":" + key + " " + "Value" + ":" + value);
-
+    for (let key of Object.getOwnPropertyNames(origin)) {
+        target[key] = origin[key];
     }
+
 
 }
 copy(target, origin)
-console.log("target", target)
+console.log(target)
+
+for (const key in target) {
+    const value = target[key]
+    console.log(key + ":" + value)
+}
+
+
 
 if (origin !== target) {
     console.log("Don not mach")
@@ -28,23 +37,32 @@ if (origin !== target) {
 }
 
 
+
 const meUser = {
     id: 1,
     firstName: "Ihor",
     lastName: "Svitlyi"
+
+    
 }
-const anotherUser ={
+const anotherUser = {
     id: 1,
     firstName: "Ihor",
-    lastName: "Svitlyi"
+    lastName: "Svitlyi",
+    
+    
 
 }
-function getUser(meUser, anotherUser){
-    if(meUser === anotherUser && Object.keys[meUser]!== Object.keys[anotherUser]){
-        return true;
-    }else{
-        return false
-    }
-} 
-const result = getUser(meUser, anotherUser);
-console.log(result)
+function getCheck(meUser, anotherUser){
+     
+        if( JSON.stringify(meUser) === JSON.stringify(anotherUser)){
+            console.log("Well done")
+        }else{
+            console.log("Not good")
+        }
+    
+}
+    
+
+getCheck(meUser, anotherUser)
+
